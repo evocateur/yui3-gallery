@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loupe Tests</title>
+    <script src="http://yui.yahooapis.com/combo?3.3.0/build/yui/yui-min.js&3.3.0/build/loader/loader-min.js"></script>
+</head>
+<body class="yui3-skin-sam">
+    <h1>Loupe Tests</h1>
+    <div id="c"></div>
+<script>
+/*global YUI */
+YUI({
+    "modules": {
+        "gallery-loupe": {
+            "fullpath": "../../../build/gallery-loupe/gallery-loupe.js",
+            "requires": ["classnamemanager", "node", "plugin"],
+            "skinnable": true
+        }
+    },
+    "logInclude": {
+        "TestRunner": true
+    }
+}).use("test", "console", "gallery-loupe", function (Y) {
+
+    var Assert  = Y.Assert,
+        OAssert = Y.ObjectAssert,
+        suite   = new Y.Test.Suite("Loupe Tests");
+
+    // TODO: add test cases
+
+    var c = new Y.Console({
+        "render": "#c",
+        "verbose": true,
+        // "consoleLimit": 10,
+        "newestOnTop": false
+    });
+
+    Y.Test.Runner.add(suite);
+    Y.Test.Runner.run();
+});
+</script>
+</body>
+</html>
